@@ -1,12 +1,14 @@
 var count = 0;
-document.getElementById("myButton").onclick = function() {
+document.getElementById("myButton").onclick = function () {
     count++;
-	if (count % 2 == 0) { 
-		document.getElementById("demo").innerHTML = "";
-	}
-	else {
-		var img = document.createElement("img");
-		img.src = "image3.jpg"; 
-		document.getElementById("demo").appendChild(img);
-	}
+    var demoElement = document.getElementById("demo");
+
+    if (count % 2 == 0) {
+        demoElement.innerHTML = ""; // Скрываем картинку
+    } else {
+        var img = document.createElement("img");
+        img.src = "image3.jpg";
+        img.alt = "Описание картинки"; // Добавляем атрибут alt для доступности
+        demoElement.appendChild(img); // Показываем картинку
+    }
 }
